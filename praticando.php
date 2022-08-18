@@ -55,7 +55,6 @@
         }
     }
 
-
     $pessoa1 = new Humano;
 
     $pessoa1->setNome("outro luis");

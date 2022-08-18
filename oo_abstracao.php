@@ -9,10 +9,14 @@
         private $salario = null;
 
         /* overloading / sobrecarga */
-        /* function __set($atributo, $valor)
+         function __set($atributo, $valor)
         {
-            $this->$atributo
-        } */
+            $this->$atributo = $valor;
+        }
+
+        function  __get($atributo){
+            return $this->$atributo;
+        }
 
         //getters e setters
         function setNome($nome){
@@ -40,7 +44,7 @@
         }
 
         public function resumirCadFunc(){
-            return "$this->nome possui $this->numFilhos filhos(s) o telefone: $this->telefone";
+            return $this->__get('nome'). " possui " . $this->__get('idade') ." filhos(s)  o telefone: " . $this->__get('telefone');
         }
 
         public function modificarNumFilhos($numFilhos){
@@ -50,7 +54,7 @@
     }
 
     /* identidade/instancia */
-   /*  $pessoa1 = new Funcionario();
+/*  $pessoa1 = new Funcionario();
     echo $pessoa1->resumirCadFunc();
     echo '<br>';
     $pessoa1->modificarNumFilhos(3);
@@ -59,15 +63,20 @@
  */
 
     $pessoa2 = new Funcionario();
-    $pessoa2->setNome('luis');
+    $pessoa2->__set('nome' ,'luis');
     /* echo $pessoa2->getNome();*/
-    $pessoa2->setTelefone('41 98440-4792');
+    $pessoa2->__set('telefone','42 98440-4792');
     /* echo $pessoa2->getTelefone(); */
-    $pessoa2->setNumFilhos(1);
+    $pessoa2->__set('numFilhos', 3);
+    $pessoa2->__set('cargo', 'programdor');
+    $pessoa2->__set('salario', 3.000);
+    echo $pessoa2->resumirCadFunc();
+    echo '<hr>';
     /* echo $pessoa2->getNumFilhos(); */
     //echo $pessoa2->resumirCadFunc();
-    echo $pessoa2->getNome() . ' possui:' . $pessoa2->getNumFilhos() . ' filhos(s) ' . ' o telefone: ' . $pessoa2->getTelefone();
-    echo '<hr>';
+   /*  echo $pessoa2->__get('nome') . ' possui: ' . $pessoa2->__get('numFilhos') . ' filhos(s) ' . ' o telefone: ' . $pessoa2->__get('telefone').
+    ' cargo '. $pessoa2->__get('cargo'). ' salario '. $pessoa2->__get('salario');
+    echo '<hr>'; */
 /*
     $pessoa3 = new Funcionario();
     $pessoa3->modificarNumFilhos(2);
