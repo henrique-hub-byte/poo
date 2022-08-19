@@ -1,17 +1,18 @@
 <?php
     class Pai  {
+        /* operadores de visibilidade */
         private $nome = "Luis";
         protected $sobrenome = "martins";
         public $humor = 'feliz';
 
-        public function __get($atributo)
+        public function __get($attr)
         {
-            return $this->$atributo;
+            return $this->$attr;
         }
 
-        public function __set($name, $value)
+        public function __set($attr, $value)
         {
-            $this->$name = $value;
+            $this->$attr = $value;
 
         }
 
@@ -28,11 +29,44 @@
             echo '<br>';
             $this->responder();
         }
-
-
     }
 
+    class Filho extends pai {
+        /* public function getAtributo($attr){
+            return $this->$attr;
+        } */
+/*
+        public function setAtributo($attr, $value){
+            $this->$attr = $value;
+        } */
+    }
+/*
     $pai = new Pai();
     $pai->sobrenome = 'bonfim';
-    echo $pai->exercutarAcao();
+    echo $pai->exercutarAcao(); */
+
+    $filho = new Filho;
+    echo '<pre>';
+    print_r($filho);
+    echo '</pre>';
+
+    /* metodos da classe filho */
+    /* $filho->setAtributo('nome', 'steven');
+    echo '<pre>';
+    print_r($filho);
+    echo '</pre>';
+    echo $filho->getAtributo('nome'); */
+
+    /* exibir os metodos do objeto */
+    echo '<pre>';
+
+    print_r(get_class_methods($filho));
+    print_r($filhos);
+    echo '</pre>';
+    echo $filho->
+    $filho->__set('nome', 'outro luis');
+    /* por ter feito o extends do atributo que tem
+    metodos magicos get e set conseguimos alterar os atributos
+    private */
+    echo $filho->__get('nome');
 ?>
