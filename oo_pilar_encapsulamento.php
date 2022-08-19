@@ -69,4 +69,6 @@
     metodos magicos get e set conseguimos alterar os atributos
     private */
     echo $filho->__get('nome');
+    echo '<hr>';
+    $filho->exercutarAcao();
 ?>

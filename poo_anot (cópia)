@@ -1,0 +1,20 @@
+/* anotações poo */
+
+dentro dos metodos recuperamos os atributos e podemos alteralos
+
+<!-- pilar da abstração -->
+indentificamos a entidade através da abtração
+entidade = produto,ideia,funcionario
+\n
+identidade = instanciaex: new produto
+\n
+caracteristicas = atributos,categoria,titulo,descrição,valor
+\n
+ações = comportamentos,resumo do produto,alterar o valor do produto
+/********************************/
+__contruct 
+considerado ciclo de vida do objeto
+/*********************************/
+herança
+
+  
