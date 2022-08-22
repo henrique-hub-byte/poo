@@ -1,8 +1,5 @@
 <?php
 
-use Filho as GlobalFilho;
-use Pai as GlobalPai;
-
 class pai
 {
     private $nome = "burn-o";
@@ -30,14 +27,23 @@ class pai
 
 class Filho extends Pai{
 
+    public function __construct()
+    {
+        echo '<pre>';  
+        print_r(get_class_methods($this));
+        echo '</pre>';
+    }
+
 }
 $filho = new Filho;
 echo '<pre>';
 print_r($filho);
 echo '</pre>';
 
+/*  */
 $filho->__set('nome', 'reginaldo rossi');
 echo $filho->__get('nome');
 echo '<br>';
+/* executando o metodo que pertece a classe pai através da classe filho */
 $filho->pub_func();
 ?>
